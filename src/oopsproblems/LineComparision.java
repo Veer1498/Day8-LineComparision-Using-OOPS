@@ -1,43 +1,51 @@
 package oopsproblems;
+import java.util.Scanner;
 
 public class LineComparision {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Welcome to Line Comparision Computation Program");
-		int x1 = 2;
-		int x2 = 3;
-		int y1 = 5;
-		int y2 = 2;
-		int x3 = 2;
-		int x4 = 3;
-		int y3 = 5;
-		int y4 = 2;
-		double lengthOfLine1 = Math.sqrt (((x2-x1)^2)+((y2-y1)^2));
-		double lengthOfLine2 = Math.sqrt (((x4-x3)^2)+((y4-y3)^2));
-		Integer obj1 = new Integer((int)lengthOfLine1);
-		Integer obj2 = new Integer((int)lengthOfLine2);
-		System.out.println("The points x1= " +x1);
-		System.out.println("The points x2= " +x2);
-		System.out.println("The points y1= " +y1);
-		System.out.println("The points y2= " +y2);
-		System.out.println("The points x3= " +x3);
-		System.out.println("The points x4= " +x4);
-		System.out.println("The points y3= " +y3);
-		System.out.println("The points y4= " +y4);
-		System.out.println("Length of Line1 = " + lengthOfLine1);
-		System.out.println("Length of Line2 = " + lengthOfLine2);
-		System.out.println("Line1 and line2 are Equal : "+ obj1.equals(obj2));
-		System.out.println("Comparing 2 Lines : "+ obj1.compareTo(obj2));
-		if (obj1.compareTo(obj2)<0) {
-			System.out.println("Line 1 is Greater");
-		}
-		else if(obj1.compareTo(obj2)>0) {
-			System.out.println("Line 2 is Greater");
+	
+	static int x1, x2, x3, x4, y1, y2, y3, y4, value;
+	static double Length1, Length2;
+	
+		// input from user for variables
+	
+		public static void Cordinates() {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("For Line 1: Enter the cordinates of 1st point");
+			x1 = sc.nextInt();
+			y1 = sc.nextInt();
 			
+			System.out.println("For Line 1: Enter the cordinates of 2nd point");
+			x2 = sc.nextInt();
+			y2 = sc.nextInt();
+			
+			System.out.println("For Line 2: Enter the cordinates of 1st point");
+			x3 = sc.nextInt();
+			y3 = sc.nextInt();
+			
+			System.out.println("For Line 2: Enter the cordinates of 2nd point");
+			x4 = sc.nextInt();
+			y4 = sc.nextInt();
 		}
-		else
-			System.out.println("Both Are Same Length No Varies");
+		
+		// method to calculate the length 
+		
+		public static void LengthOfLines() {
+		
+		Length1 = (int) Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
+		Length2 = (int) Math.sqrt(Math.pow((x4-x3),2)+Math.pow((y4-y3),2));
+		System.out.println("Lengths of Line1 and Line2 are "+ Length1 +" , "+ Length2+ ".");
 	}
+		// method to compare the lines
+		
+		public static void Comparing() {
+		value = Double.compare(Length1, Length2);
+		if (value == 0)
+			System.out.println("Lines are equal");
+		else if (value > 1)
+			System.out.println("Line 1 is greater than Line 2");
+		else
+			System.out.println("Line 1 is less than Line 2");
+	}
+		
 
-}
+}	
