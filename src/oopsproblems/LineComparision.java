@@ -28,6 +28,12 @@ public class LineComparision {
 		System.out.println("Length of Line1 = " + lengthOfLine1);
 		System.out.println("Length of Line2 = " + lengthOfLine2);
 		System.out.println("Line1 and line2 are Equal : "+ obj1.equals(obj2));
+		System.out.println("Comparing 2 Lines : "+ obj1.compareTo(obj2));
+		if (obj1.compareTo(obj2)==0) {
+			System.out.println("Both Lines are Equal");
+		}
+		else
+			System.out.println("Both Lines are Not Equal");
 	}
 
 }
