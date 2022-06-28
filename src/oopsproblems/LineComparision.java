@@ -29,11 +29,15 @@ public class LineComparision {
 		System.out.println("Length of Line2 = " + lengthOfLine2);
 		System.out.println("Line1 and line2 are Equal : "+ obj1.equals(obj2));
 		System.out.println("Comparing 2 Lines : "+ obj1.compareTo(obj2));
-		if (obj1.compareTo(obj2)==0) {
-			System.out.println("Both Lines are Equal");
+		if (obj1.compareTo(obj2)<0) {
+			System.out.println("Line 1 is Greater");
+		}
+		else if(obj1.compareTo(obj2)>0) {
+			System.out.println("Line 2 is Greater");
+			
 		}
 		else
-			System.out.println("Both Lines are Not Equal");
+			System.out.println("Both Are Same Length No Varies");
 	}
 
 }
